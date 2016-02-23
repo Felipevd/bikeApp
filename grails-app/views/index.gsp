@@ -31,10 +31,40 @@
         <div class="topMenu">?</div>
         <div class="topMenu">Contacto</div>
         <div class="topMenu">Mapa</div>
-    	<div class="topMenu">Perfil</div>
+    	<div class="topMenu">Perfilllll</div>
       </div>
     </nav>
-
+	
+	</br></br></br>
+	<div class="container">
+	<!-- username | logout link -->
+    <g:if test="${session?.user}">
+		<div id="login">
+			${session?.user?.usuario} ${session?.user?.email} |
+			<g:link controller="usuario" action="logout">Logout</g:link>
+			</div>
+	<!-- END #login -->
+    </g:if>
+	<g:else>
+		<g:form name="login" controller="usuario" action="login">
+		<p>TEsting shiiit</p>
+		<p>
+			<label for="email">Email</label>
+			<g:textField name="email" />
+		</p>
+		<p>
+			<label for="contraseña">Contraseña</label>
+			<g:passwordField name="contraseña" />
+		</p>
+		<p class="button">
+			<label>&nbsp;</label>
+			<g:submitButton class="button" name="submitButton" value="Logiiin" />
+		</p>
+		</g:form>
+	</g:else>
+	
+	</div>
+	
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
