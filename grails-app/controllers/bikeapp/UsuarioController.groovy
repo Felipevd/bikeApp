@@ -15,24 +15,24 @@ class UsuarioController {
 	def login(){
 		
 		if (request.method == 'POST'){
-			def u = Usuario.findByEmail(params.email)
+			def u = Usuario.findByEmailAndContrasena(params.email,params.contraseña)
 			if (u){
+				flash.message = "Usuario hola"
 				session.user = u
-				redirect(controller:'mapa')
+				redirect(uri:'/')
 			}else{
 				flash.message = "Usuario no encontrado"
-				redirect(controller:'mapa')
+				redirect(uri:'/')
 			}
 		}else if (session.user) {
             // usuario ya encontrado
             redirect(controller:'mapa')
         }
-		render (view:"registro", model: [userList:Usuario.list()])
     }
  
     def logout() {
         session.invalidate()
-        redirect(controller:'mapa')
+        redirect(uri:'/')
     }
 }
 

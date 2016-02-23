@@ -60,6 +60,7 @@
 			<label>&nbsp;</label>
 			<g:submitButton class="button" name="submitButton" value="Logiiin" />
 		</p>
+		
 		</g:form>
 	</g:else>
 	

@@ -8,7 +8,7 @@ class Usuario {
 
 	String usuario
 	String email
-	String contraseña
+	String contrasena
 	String fecha
 
     static constraints = {
