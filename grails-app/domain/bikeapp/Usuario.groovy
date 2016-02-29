@@ -10,7 +10,9 @@ class Usuario {
 	String email
 	String contraseña
 	String fecha
+	String intereses
 
     static constraints = {
+    	intereses(nullable: true)
     }
 }
